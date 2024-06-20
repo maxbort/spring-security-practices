@@ -2,6 +2,7 @@ package ex01.initializer;
 
 import javax.servlet.Filter;
 
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class Ex01WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -22,6 +23,6 @@ public class Ex01WebApplicationInitializer extends AbstractAnnotationConfigDispa
 
 	@Override
 	protected Filter[] getServletFilters() {
-		return null;
+        return new Filter[]{new DelegatingFilterProxy()};
 	}
 }
