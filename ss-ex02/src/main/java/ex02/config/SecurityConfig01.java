@@ -18,7 +18,7 @@ import ex02.filter.MySecurityFilter03;
 import ex02.filter.MySecurityFilter04;
 
 @Configuration
-public class SecurityConfig {
+public class SecurityConfig01 {
 
     @Bean
     public FilterChainProxy springSecurityFilterChain() {
@@ -47,8 +47,7 @@ public class SecurityConfig {
                         return Arrays.asList(
                         		mySecurityFilter01(), 
                         		mySecurityFilter02(), 
-                        		mySecurityFilter03(),
-                        		mySecurityFilter04()
+                        		mySecurityFilter03()
                         		);
                     }
                 }
@@ -71,9 +70,5 @@ public class SecurityConfig {
     public MySecurityFilter03 mySecurityFilter03() {
     	return new MySecurityFilter03();
     }
-    
-    @Bean
-    public MySecurityFilter04 mySecurityFilter04() {
-    	return new MySecurityFilter04();
-    }
+
 }
